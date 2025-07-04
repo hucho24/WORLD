@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wadunia Scrap Metal</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: black;}
+    input, select, button { padding: 5px; margin: 4px; }
+    .seller, .store-seller { border: 1px solid #ccc; padding: 10px; margin-top: 15px; }
+    .item, .store-item { display: flex; gap: 10px; align-items: center; margin-bottom: 5px; }
+    .item input { width: 60px; }
+    .seller-header, .store-header { display: flex; justify-content: space-between; align-items: center; }
+    table { border-collapse: collapse; margin-top: 20px; width: 100%; max-width: 500px; }
+    th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+    #deleteAllBtn, #deleteAllStoreBtn { background-color: red; color: white; font-weight: bold; border: none; padding: 6px; }
+    #sendAllToStoreBtn { background-color: green; color: white; font-weight: bold; padding: 6px; margin-top: 10px; }
+  
+  .contain{
+    background-color: red;
+    width: 60%;
+    position: fixed;
+    margin: -2% 34%;
+  }
+  .container{
+    background-color: green;
+    width: 95%;
+    height: 110vh;
+    margin: -4% 5%;display: none;
+   
+  }
+  .head{
+    background-color: red;
+    width: 90%;
+    height: 100vh;display: none;
+    position: fixed;
+    margin: -5% 10%;
+    overflow: auto;
+  }
+  .list{
+    background-color: white;
+    width: 50%;
+    overflow: auto;
+    height: 90vh;
+    margin: -3% 0%;
+  }
+  .allq{
+    background-color: blue;
+    width: 50%;
+    
+    margin: -43% 50%;
+  }
+  .btn{
+    background-color: white;
+    display: grid;
+  
+    
+   
+
+  }
+  .spn{
+    background-color: blue;
+    height: 3px;
+    width: 25px;
+     margin: 3%;
+  }
+
+  .nav{
+    
+    width: 10%;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    
+    transition: 2s;
+    margin: 0% -15%;
+    
+  }
+  
+    
+  
+  .butt{
+      background-color: blue;
+      width: 90%;
+      height: 5vh;
+    }
+    .home{
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: non;
+
+    }
+    .begin{
+      position: fixed;
+      width: 110%;
+      height: 110vh;
+      margin: -7% -3%;
+      background-color: white;
+    }
+    .login{
+      background-color: silver;
+    
+      height: 300px;
+      border-radius: 14px;
+      border: 3px solid  purple;
+      margin: 23% 37%;
+      display: none;
+
+    }
+    .start{
+      background-color: white;
+    
+      margin: 17% 20%;
+      
+    }
+    .h1{
+      font-size: 34px;
+  
+      color: blue;
+      font-weight: 800;
+      width: 700px;
+      animation: h1 3s ;
+      display: block;
+    }
+    @keyframes h1{
+      from{
+        font-size: 0px; color: red;
+      }
+      to{
+        font-size: 34px;
+      }
+    }
+    .h2{
+      color: red;
+      width: 200px;
+      font-size: 34px;
+      animation:  h2 2s;
+      display: none;
+
+
+    }
+    @keyframes h2{
+      from{
+        margin: 0% 0%; margin: 12% 0%;font-size: 0px;
+
+      }
+      to{
+        margin: 23% 37%;font-size: 34px;
+      }
+    }
+    .h3{
+      color: purple;
+      font-size: 45px;
+    width:750px;
+    font-weight: 34;
+    animation: h3 2.5s ;
+    display: none;
+    }
+    @keyframes h3{
+      from{
+        font-size: 90px;rotate: 0deg;
+      }
+      to{
+        font-size: 23px;rotate: 360deg;
+    }}
+    .passb{
+      background-color:white;
+      
+      width: 110%;
+      height: 100vh;
+    
+      display: none;
+      margin: -3% -3%;
+      padding: 0%;
+      
+      align-content: center;
+    }
+  </style>
+ 
+  
+</head>
+
+
+<body><div class="passb" id="passb">
+  <-------->
+  <input type="password" id="pass">enter passkey
+  <button onclick="ass()">open</button>
+  <button onclick="back()">back</button>
+  <script>
+    function ass(){
+      const pa=document.getElementById("pass").value;
+      if(!pa ){
+        alert("invalid passkey");return
+      }
+      pass.value=""
+      const cont=document.getElementById("cont")
+      cont.style.display='block'
+      const ss=document.getElementById("passb").style.display='none'
+    }
+    function back(){
+      document.getElementById("home").style.display='block'
+      document.getElementById("passb").style.display='none'
+    }
+  </script>
+</div>
+ 
+  <button onclick="menu()" class="btn" id="menu">
+    <span class="spn"></span>
+    <span class="spn"></span>
+    <span class="spn"></span>
+    <span class="spn"></span>
+  </button>
+  <div class="home" id="home">
+    home
+  </div>
+   <div class="begin" id="begin">
+    <div class="login" id="login">
+      <h1>login</h1>
+     username <input type="text" name="" id="username"><br>
+     <br>
+     <input type="password" name="" id="password">
+     Enter password<br>
+
+     <button onclick="ok()">enter</button>
+ </div>
+<div class="start" id="start">
+   <div class="h1" id="h1">
+     WADUNIA SCRAPE METAL DEALERS
+  </div>
+<div class="h2" id="h2">
+  WELCOME
+</div>
+<div class="h3" id="h3">
+  THE WORLD
+</div>
+
+</div>
+    </div>
+  
+    <script>
+      setTimeout(()=>{
+        document.getElementById("h1").style.display='none'
+      
+      document.getElementById("h2").style.display='block'
+      },4000)
+      setTimeout(()=>{
+         document.getElementById("h2").style.display='none'
+      
+      document.getElementById("h3").style.display='block'
+      },8000)
+      setTimeout(()=>{
+         
+         document.getElementById("login").style.display='block'
+      },11000)
+
+    </script>
+
+    <script>
+      function ok(){
+        const username=document.getElementById("username").value;
+        const password=document.getElementById("password").value;
+        const h="hucho"
+        
+         if(!username){
+          alert("invalid username");return
+         }
+
+        if(!password>1211 || password<1212){
+          alert("wrong password");return
+        }
+
+        document.getElementById("begin").style.display='none'
+      }
+    </script>
+  </div>
+  <nav id="nav" class="nav">
+    <button class="butt" onclick="home()">home</button>
+    <button  class="butt" onclick="buy()">buyinglist</button>
+    <button  class="butt" onclick="sto()">storelist</button>
+   
+  </nav>
+  
+
+  
+<div class="container" id="container">
+  <h2>Wadunia Scrap Metal - Buying List</h2>
+  <div><div class="contain">
+    <input type="text" id="sellerName" placeholder="Seller Name" />
+    <select id="itemName">
+      <option value="">Select Item</option>
+      <option value="plastic">Plastic</option>
+      <option value="corton">Corton</option>
+      <option value="white">White</option>
+    </select>
+    <input type="number" id="quantity" placeholder="Quantity" min="1" />
+    <input type="number" id="price" placeholder="Price" min="0" />
+    <button id="addBtn">Add Item</button>
+  </div>
+
+  <button id="deleteAllBtn">Delete All List</button></div>
+  <div class="list"><div id="sellerLists"></div></div>
+
+  
+  <div class="allq"><h3>All Quantity Summary</h3>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Total Quantity</th><th>Total Amount (Ksh)</th></tr>
+    </thead>
+    <tbody id="summaryBody"></tbody>
+  </table>
+
+  <h4 id="totalSpent">All Total Amount Spent: Ksh 0.00</h4>
+  <button id="sendAllToStoreBtn">Send All to Store List</button></div>
+</div>
+  <hr />
+  <div class="head" id="cont">
+  <h2>Store List</h2>
+  <div id="storeList"></div>
+  <button id="deleteAllStoreBtn">Delete All Store List</button>
+
+  <h3>Store Item Summary</h3>
+  <table>
+    <thead><tr><th>Item</th><th>Total Quantity</th></tr></thead>
+    <tbody id="storeSummaryBody"></tbody>
+  </table>
+</div>
+<script src="same.js"></script>
+<script src="store.js"></script>
+<script src="scripts.js"></script>
+
+
+  
+</body>
+</html>
